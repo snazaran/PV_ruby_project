@@ -1,0 +1,50 @@
+<!-- Responsive panel example-->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Salesperson #<%= @salesperson.id %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+              <dt>First name</dt>
+              <dd><%= @salesperson.first_name %></dd>
+
+              <dt>Last name</dt>
+              <dd><%= @salesperson.last_name %></dd>
+
+              <dt>Accounts</dt>
+              <ul>
+              <% @salesperson.accounts.each do |account| %>
+              <li>
+              <%= account.firm_name %>
+              </li>
+              <% end %>
+              </ul>
+
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <a href="/salespeople" class="btn btn-primary">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+
+              <a href="/salespeople/<%= @salesperson.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+
+              <a href="/delete_salesperson/<%= @salesperson.id %>" class="btn btn-danger" rel="nofollow">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->

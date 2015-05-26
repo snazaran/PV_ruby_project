@@ -1,0 +1,57 @@
+<!-- Responsive panel example-->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Account #<%= @account.id %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+              <dt>Firm name</dt>
+              <dd><%= @account.firm_name %></dd>
+
+              <dt>City</dt>
+              <dd><%= @account.city %></dd>
+
+              <dt>Monthly rate</dt>
+              <dd><%= @account.monthly_rate %></dd>
+
+              <dt>Salesperson</dt>
+              <dd><%= @account.salesperson.first_name %></dd>
+
+              <dt>Outstanding Balance</dt>
+              <dd><%= @balance %></dd>
+
+              <dt>Users</dt>
+              <% @account.users.each do |user| %>
+              <dd><%= user.login %></dd>
+              <% end %>
+
+
+
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <a href="/accounts" class="btn btn-primary">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+
+              <a href="/accounts/<%= @account.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+
+              <a href="/delete_account/<%= @account.id %>" class="btn btn-danger" rel="nofollow">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->

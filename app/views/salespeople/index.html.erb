@@ -3,6 +3,13 @@
     Salespeople
     <a href="/salespeople/new" class="btn btn-lg btn-success"><i class="fa fa-plus"></i></a>
   </h1>
+  <h2>Total MMR</h2>
+  <% @tmmr = 0 %>
+  <% accounts = Account.all %>
+  <% accounts.each do|account| %>
+  <%  @tmmr = @tmmr + account.monthly_rate %>
+  <% end %>
+  <h2>$<%= @tmmr %></h2>
 </div>
 
 <!-- Responsive, Isotope-based layout example -->
@@ -31,7 +38,18 @@
           <dd><%= salesperson.last_name %></dd>
 
           <dt>Total Accounts</dt>
-          <%= salesperson.accounts.count %>
+          <dd><%= salesperson.accounts.count %></dd>
+
+          <dt>Total MMR</dt>
+          <% @mmr = 0 %>
+          <% salesperson.accounts.each do |account| %>
+          <% @mmr = @mmr + account.monthly_rate %>
+          <% end %>
+
+          <dd>$<%= @mmr %></dd>
+
+
+
          <!--  <% accounts = Account.where( :salesperson_id => salesperson.id)  %>
          <dd><%= accounts.count %> -->
 

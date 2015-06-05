@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>
-    Users
-    <a href="/users/new" class="btn btn-lg btn-success"><i class="fa fa-plus"></i></a>
+    Instances
+    <a href="/instances/new" class="btn btn-lg btn-success"><i class="fa fa-plus"></i></a>
   </h1>
 </div>
 
@@ -9,41 +9,41 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <input type="text" id="quicksearch" placeholder="Search Users (start typing)" class="form-control">
+    <input type="text" id="quicksearch" placeholder="Search Instances (start typing)" class="form-control">
   </div>
 </div>
 
 <hr>
 
 <div class="row isotope-container">
-<% @users.each do |user| %>
+<% @instances.each do |instance| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">User #<%= user.id %></h3>
+        <h3 class="panel-title">Instance #<%= instance.id %></h3>
       </div>
       <div class="panel-body">
         <dl>
           <dt>Login</dt>
-          <dd><%= user.login %></dd>
+          <dd><%= instance.login %></dd>
 
-          <dt>Password</dt>
-          <dd><%= user.password %></dd>
+          <dt>Pw</dt>
+          <dd><%= instance.pw %></dd>
 
           <dt>Account</dt>
-          <dd><%= user.account.firm_name %></dd>
+          <dd><%= instance.account_id %></dd>
 
         </dl>
         <div class="btn-group btn-group-justified">
-          <a href="/users/<%= user.id %>" class="btn btn-primary">
+          <a href="/instances/<%= instance.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
           </a>
 
-          <a href="/users/<%= user.id %>/edit" class="btn btn-warning">
+          <a href="/instances/<%= instance.id %>/edit" class="btn btn-warning">
             <i class="fa fa-edit"></i>
           </a>
 
-          <a href="/delete_user/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+          <a href="/delete_instance/<%= instance.id %>" class="btn btn-danger" rel="nofollow">
             <i class="fa fa-trash-o"></i>
           </a>
         </div>

@@ -1,22 +1,22 @@
 Rails.application.routes.draw do
-root 'salespeople#index'
-
-  # Routes for the User resource:
+  # Routes for the Instance resource:
   # CREATE
-  get "/users/new", :controller => "users", :action => "new"
-  post "/create_user", :controller => "users", :action => "create"
+  get "/instances/new", :controller => "instances", :action => "new"
+  post "/create_instance", :controller => "instances", :action => "create"
 
   # READ
-  get "/users", :controller => "users", :action => "index"
-  get "/users/:id", :controller => "users", :action => "show"
+  get "/instances", :controller => "instances", :action => "index"
+  get "/instances/:id", :controller => "instances", :action => "show"
 
   # UPDATE
-  get "/users/:id/edit", :controller => "users", :action => "edit"
-  post "/update_user/:id", :controller => "users", :action => "update"
+  get "/instances/:id/edit", :controller => "instances", :action => "edit"
+  post "/update_instance/:id", :controller => "instances", :action => "update"
 
   # DELETE
-  get "/delete_user/:id", :controller => "users", :action => "destroy"
+  get "/delete_instance/:id", :controller => "instances", :action => "destroy"
   #------------------------------
+
+root 'salespeople#index'
 
   # Routes for the Account resource:
   # CREATE

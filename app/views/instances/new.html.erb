@@ -1,12 +1,12 @@
 <!-- Validation failure messages -->
 
-<% if @user.errors.any? %>
-  <% @user.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
-  <% end %>
+<% if @instance.errors.any? %>
+<% @instance.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
 <% end %>
 
 <!-- Responsive panel example -->
@@ -15,10 +15,10 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Add User</h3>
+        <h3 class="panel-title">Add Instance</h3>
       </div>
       <div class="panel-body">
-        <form action="/create_user" method="post" class="form-horizontal">
+        <form action="/create_instance" method="post" class="form-horizontal">
           <!-- Hidden input for authenticity token to protect from forgery -->
           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -28,17 +28,17 @@
               Login
             </label>
             <div class="col-sm-10">
-              <textarea id="login" name="login" placeholder="Login" class="form-control" rows="3"><%= @user.login %></textarea>
+              <input type="text" id="login" name="login" placeholder="Login" class="form-control" value="<%= @instance.login %>">
             </div>
           </div>
 
-          <!-- Label and input for password -->
+          <!-- Label and input for pw -->
           <div class="form-group">
-            <label for="password" class="col-sm-2 control-label">
-              Password
+            <label for="pw" class="col-sm-2 control-label">
+              Pw
             </label>
             <div class="col-sm-10">
-              <textarea id="password" name="password" placeholder="Password" class="form-control" rows="3"><%= @user.password %></textarea>
+              <input type="text" id="pw" name="pw" placeholder="Pw" class="form-control" value="<%= @instance.pw %>">
             </div>
           </div>
 
@@ -47,20 +47,18 @@
             <label for="account_id" class="col-sm-2 control-label">
               Account
             </label>
-
             <div class="col-sm-10">
-            <%= select_tag :account_id, options_from_collection_for_select( Account.order("firm_name ASC"), :id, :firm_name)%>
-
+            <%= select_tag :account_id, options_from_collection_for_select( Account.order("firm_name ASC"), :id, :firm_name )%>
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button class="btn btn-success">
-                Create User
+                Create Instance
               </button>
               or
-              <a href="/users">Cancel</a>
+              <a href="/instances">Cancel</a>
             </div>
           </div>
         </form>

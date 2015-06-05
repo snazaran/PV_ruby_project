@@ -4,32 +4,32 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">User #<%= @user.id %></h3>
+        <h3 class="panel-title">Instance #<%= @instance.id %></h3>
       </div>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
             <dl class="dl-horizontal">
               <dt>Login</dt>
-              <dd><%= @user.login %></dd>
+              <dd><%= @instance.login %></dd>
 
-              <dt>Password</dt>
-              <dd><%= @user.password %></dd>
+              <dt>Pw</dt>
+              <dd><%= @instance.pw %></dd>
 
               <dt>Account</dt>
-              <dd><%= Account.find_by(@user.account_id).firm_name %></dd>
+              <dd><%= @instance.account_id %></dd>
 
             </dl>
             <div class="btn-group btn-group-justified">
-              <a href="/users" class="btn btn-primary">
+              <a href="/instances" class="btn btn-primary">
                 <i class="fa fa-chevron-left"></i>
               </a>
 
-              <a href="/users/<%= @user.id %>/edit" class="btn btn-warning">
+              <a href="/instances/<%= @instance.id %>/edit" class="btn btn-warning">
                 <i class="fa fa-edit"></i>
               </a>
 
-              <a href="/delete_user/<%= @user.id %>" class="btn btn-danger" rel="nofollow">
+              <a href="/delete_instance/<%= @instance.id %>" class="btn btn-danger" rel="nofollow">
                 <i class="fa fa-trash-o"></i>
               </a>
             </div>

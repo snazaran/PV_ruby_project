@@ -25,10 +25,14 @@
               <dt>Outstanding Balance</dt>
               <dd><%= @balance %></dd>
 
-              <dt>Users</dt>
+              <dt>Instances</dt>
               <% @account.instances.each do |instance| %>
               <dd><%= instance.login %></dd>
               <% end %>
+
+              <dt>Cap Nick</dt>
+              <dd><%= @account.cap_nick %></dd>
+
 
 
 

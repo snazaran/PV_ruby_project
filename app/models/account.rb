@@ -5,6 +5,7 @@ validates :city, :presence => true
 validates :firm_name, :uniqueness => { :scope => :city}
 validates :monthly_rate, :presence => true
 validates :salesperson_id, :presence => true
+validates :cap_nick, :uniqueness => true
 
 has_many :instances
 belongs_to :salesperson

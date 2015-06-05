@@ -22,6 +22,7 @@ class AccountsController < ApplicationController
     @account.city = params[:city]
     @account.monthly_rate = params[:monthly_rate]
     @account.salesperson_id = params[:salesperson_id]
+    @account.cap_nick = params[:cap_nick]
 
     if @account.save
       redirect_to "/accounts", :notice => "Account created successfully."
@@ -41,6 +42,7 @@ class AccountsController < ApplicationController
     @account.city = params[:city]
     @account.monthly_rate = params[:monthly_rate]
     @account.salesperson_id = params[:salesperson_id]
+    @account.cap_nick = params[:cap_nick]
 
     if @account.save
       redirect_to "/accounts", :notice => "Account updated successfully."

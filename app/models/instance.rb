@@ -3,5 +3,5 @@ class Instance < ActiveRecord::Base
   validates :pw, :presence => :true, :uniqueness => :true
   validates :account_id, :presence => :true
 
-
+belongs_to :account
 end

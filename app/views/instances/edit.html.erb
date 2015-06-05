@@ -48,7 +48,7 @@
               Account
             </label>
             <div class="col-sm-10">
-              <%= select_tag :account_id, options_from_collection_for_select( Account.order("firm_name ASC"), :id, :firm_name )%>
+              <%= select_tag :account_id, options_from_collection_for_select( Account.order("firm_name ASC"), :id, :firm_name, @)%>
             </div>
           </div>
 

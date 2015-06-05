@@ -26,8 +26,8 @@
               <dd><%= @balance %></dd>
 
               <dt>Users</dt>
-              <% @account.users.each do |user| %>
-              <dd><%= user.login %></dd>
+              <% @account.instances.each do |instance| %>
+              <dd><%= instance.login %></dd>
               <% end %>
 
 

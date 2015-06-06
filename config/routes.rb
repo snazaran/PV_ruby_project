@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Capture resource:
+  # CREATE
+  get "/captures/new", :controller => "captures", :action => "new"
+  post "/create_capture", :controller => "captures", :action => "create"
+
+  # READ
+  get "/captures", :controller => "captures", :action => "index"
+  get "/captures/:id", :controller => "captures", :action => "show"
+
+  # UPDATE
+  get "/captures/:id/edit", :controller => "captures", :action => "edit"
+  post "/update_capture/:id", :controller => "captures", :action => "update"
+
+  # DELETE
+  get "/delete_capture/:id", :controller => "captures", :action => "destroy"
+  #------------------------------
+
   # Routes for the Instance resource:
   # CREATE
   get "/instances/new", :controller => "instances", :action => "new"

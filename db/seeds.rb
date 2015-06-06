@@ -19,7 +19,7 @@ csv.each do |row|
   t.captures = row['captures']
   t.tiles = row['tiles']
   t.save
-  puts "#{t.year}, #{t.month}, #{t.firm_name} saved"
+  puts "#{t.year}, #{t.month}, #{t.firm_name}, #{t.captures} #{t.tiles} saved"
 
 end
 

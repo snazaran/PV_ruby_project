@@ -1,4 +1,4 @@
-year,month,client_name,count(s.id),sum(s.page_length)
+year,month,client_name,captures,tiles
 2015,3,4Discovery,3,10
 2015,3,Bryan Cave,2,43
 2015,3,Chicago Public Schools,15,96

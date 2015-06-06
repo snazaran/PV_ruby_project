@@ -4,6 +4,9 @@ class AccountsController < ApplicationController
 
   def index
     @accounts = Account.all
+    @captures =Capture.all
+
+
   end
 
   def show

@@ -16,7 +16,7 @@
 <hr>
 
 <div class="row isotope-container">
-<% @accounts.each do |account| %>
+  <% @accounts.each do |account| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -37,7 +37,19 @@
           <dd><%= account.salesperson.first_name %> <%= account.salesperson.last_name %></dd>
 
           <dt>Instances</dt>
-          <dd><%= account.instances.count %>
+          <dd><%= account.instances.count %></dd>
+
+          <dt>Captures</dt>
+          <dd><% c=@captures.where({:firm_name => "Nuzzo and Roberts",}) %></dd>
+          <% capnum = 0 %>
+          <% c.each do |cap| %>
+            <% capnum = capnum + cap.captures %>
+
+         <%  end %>
+         <%= capnum %>
+
+
+
 
         </dl>
         <div class="btn-group btn-group-justified">
@@ -56,7 +68,7 @@
       </div>
     </div>
   </div>
-<% end %>
+  <% end %>
 </div>
 
 <!-- You can ignore the following. It's a quick and dirty example of how to get a Pinterest-style layout with quick search. -->

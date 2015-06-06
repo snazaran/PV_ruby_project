@@ -40,13 +40,23 @@
           <dd><%= account.instances.count %></dd>
 
           <dt>Captures</dt>
-          <dd><% c=@captures.where({:firm_name => "Nuzzo and Roberts",}) %></dd>
+          <dd><% c=@captures.where({:firm_name => account.cap_nick}) %></dd>
           <% capnum = 0 %>
           <% c.each do |cap| %>
             <% capnum = capnum + cap.captures %>
 
          <%  end %>
          <%= capnum %>
+
+                   <dt>Tiles</dt>
+          <dd><% c=@captures.where({:firm_name => account.cap_nick,}) %></dd>
+          <% tilenum = 0 %>
+          <% c.each do |cap| %>
+            <% tilenum = tilenum + cap.tiles %>
+
+         <%  end %>
+         <%= tilenum %>
+
 
 
 

@@ -33,7 +33,23 @@
               <dt>Cap Nick</dt>
               <dd><%= @account.cap_nick %></dd>
 
+              <dt>Captures</dt>
+              <% c=@captures.where({:firm_name => @account.cap_nick }) %>
+              <% capnum = 0 %>
+              <% c.each do |cap| %>
+              <% capnum = capnum + cap.captures %>
 
+              <%  end %>
+              <dd><%= capnum %></dd>
+
+              <dt>Tiles</dt>
+              <dd><% c=@captures.where({:firm_name => @account.cap_nick,}) %></dd>
+              <% tilenum = 0 %>
+              <% c.each do |cap| %>
+              <% tilenum = tilenum + cap.tiles %>
+
+              <%  end %>
+              <%= tilenum %>
 
 
 

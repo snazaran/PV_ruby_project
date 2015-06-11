@@ -17,6 +17,7 @@
               <dd><%= @salesperson.last_name %></dd>
 
               <dt>Accounts</dt>
+              <dd>
               <ul>
               <% @salesperson.accounts.each do |account| %>
               <li>
@@ -24,7 +25,7 @@
               </li>
               <% end %>
               </ul>
-
+</dd>
 
             </dl>
             <div class="btn-group btn-group-justified">

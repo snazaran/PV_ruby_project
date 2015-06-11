@@ -3,7 +3,7 @@
     Salespeople
     <a href="/salespeople/new" class="btn btn-lg btn-success"><i class="fa fa-plus"></i></a>
   </h1>
-  <h2>Total MMR</h2>
+  <h2>Total MRR</h2>
   <% @tmmr = 0 %>
   <% accounts = Account.all %>
   <% accounts.each do|account| %>
@@ -40,7 +40,7 @@
           <dt>Total Accounts</dt>
           <dd><%= salesperson.accounts.count %></dd>
 
-          <dt>Total MMR</dt>
+          <dt>Total MRR</dt>
           <% @mmr = 0 %>
           <% salesperson.accounts.each do |account| %>
           <% @mmr = @mmr + account.monthly_rate %>
